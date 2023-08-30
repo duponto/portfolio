@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import TopBar from "../Header/TopBar";
 
 const Body = () => {
+    
+    const [isTop, setIsTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const windowHeight = window.innerHeight;
+            const scrollTreshold = (windowHeight * 12) / 100
+            setIsTop(window.scrollY <= scrollTreshold);
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return(
         <div>
+            <TopBar
+                isTop={isTop}
+            />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel augue aliquam lacus vulputate auctor nec sodales leo. Praesent accumsan mauris eu enim ultrices lacinia. Proin sodales sem quis nunc aliquam vulputate. Curabitur imperdiet, ante ut pharetra porttitor, erat libero congue sapien, ut consequat risus libero ac risus. Nulla congue laoreet metus id ultricies. Curabitur at turpis erat. Nunc pulvinar, turpis quis euismod tempus, lorem mauris tincidunt dui, commodo luctus mi dolor id elit. Sed malesuada elit a ipsum ornare auctor. Aenean sit amet quam vel dolor pretium tempus. Praesent sit amet nibh felis. Nulla vulputate nisl eget ipsum porttitor faucibus.
 
 Nullam commodo libero eget mauris luctus interdum. Vestibulum et leo aliquet, aliquet nibh et, elementum nibh. Pellentesque eros erat, semper et eros sit amet, ultricies efficitur nulla. Cras ornare aliquam bibendum. Pellentesque egestas congue varius. Maecenas ac blandit dui, quis consectetur orci. Mauris non elementum ipsum, ac tincidunt tellus. Proin non tellus et nulla pharetra consequat. Quisque in viverra magna, ac porttitor mi.

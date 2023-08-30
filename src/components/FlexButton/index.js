@@ -1,15 +1,15 @@
 import React from "react";
-import { Button, ThemeProvider, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
-const FlexButton = (props) => {
+const FlexButton = ({variant, href, customTheme, content}) => {
     return(
             <Button 
-                variant={props.variant}
-                href={props.href}
+                variant={variant}
+                href={href}
                 color="inherit"
                 >
-                <Typography style={{fontFamily: props.customTheme}}>
-                    {props.children}
+                <Typography style={{fontFamily: customTheme}}>
+                    {content}
                 </Typography>
             </Button>
     );
