@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TopBar from "../Header/TopBar";
+import TopBar from "components/TopBar";
 
 const Body = () => {    
     const [isTop, setIsTop] = useState(true);
