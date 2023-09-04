@@ -1,8 +1,12 @@
 import React from 'react';
 import { Typography, Stack} from '@mui/material/';
-import FlexButton from '../../FlexButton';
+import FlexButton from 'components/FlexButton';
 
-const TopBar = ({isTop}) => {
+interface TopBarProps {
+    isTop: boolean;
+}
+
+const TopBar = ({isTop} : TopBarProps) => {
     return (
         <Typography
             variant="h5"
