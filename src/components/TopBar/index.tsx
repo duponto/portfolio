@@ -9,11 +9,11 @@ interface TopBarProps {
 const TopBar = ({isTop} : TopBarProps) => {
     return (
         <Typography
+            width="100%"
             variant="h5"
             style={{
                 position: isTop ? "relative" : "fixed",
                 top: isTop ? "auto" : 0,
-                left: 0,
                 width: "100%",
                 background: "#424242",
                 padding: "0.5rem",
