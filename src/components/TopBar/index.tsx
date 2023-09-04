@@ -15,7 +15,7 @@ const TopBar = ({isTop} : TopBarProps) => {
                 position: isTop ? "relative" : "fixed",
                 top: isTop ? "auto" : 0,
                 width: "100%",
-                background: "#424242",
+                background: '#0D0D29',
                 padding: "0.5rem",
                 color: "white",
             }}>
